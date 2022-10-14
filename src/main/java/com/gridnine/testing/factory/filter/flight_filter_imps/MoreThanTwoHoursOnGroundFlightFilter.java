@@ -44,6 +44,6 @@ public class MoreThanTwoHoursOnGroundFlightFilter implements FlightFilter {
             final LocalDateTime departureDateNextSegment = segments.get(index + 1).getDepartureDate();
             timeOnGround += arrivalDate.until(departureDateNextSegment, ChronoUnit.MINUTES);
         }
-        return (timeOnGround / 60) <= 2;
+        return (timeOnGround / 60) < 2;
     }
 }

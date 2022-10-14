@@ -11,6 +11,7 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <source>UTF-8</source>
         <lombok.version>1.18.24</lombok.version>
         <slf4j.version>2.0.3</slf4j.version>
         <junit.version>5.9.1</junit.version>
