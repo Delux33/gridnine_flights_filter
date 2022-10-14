@@ -16,6 +16,9 @@ import java.util.List;
  */
 @Slf4j
 public class MoreThanTwoHoursOnGroundFlightFilter implements FlightFilter {
+    private static final int HOUR_IN_MINUTES = 60;
+    private static final int TWO_HOURS = 2;
+
     /**
      * @param flights - list of flights to filter
      * @return new list of flights after filtering
@@ -44,6 +47,6 @@ public class MoreThanTwoHoursOnGroundFlightFilter implements FlightFilter {
             final LocalDateTime departureDateNextSegment = segments.get(index + 1).getDepartureDate();
             timeOnGround += arrivalDate.until(departureDateNextSegment, ChronoUnit.MINUTES);
         }
-        return (timeOnGround / 60) < 2;
+        return (timeOnGround / HOUR_IN_MINUTES) < TWO_HOURS;
     }
 }
